@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wall Papers</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.6.3.min.js"></script>
+<script>
+                
+  $(document).ready(function() {
+      $('#gallery img').each(function(i) {
+	var imgFile = $(this).attr('src');
+	var preloadImage = new Image();
+  var imgExt = /(\.\w{3,4}$)/;
+  preloadImage.src = imgFile.replace(imgExt,'_m$1');
+		
+	$(this).hover(
+		function() {
+			$(this).attr('src', preloadImage.src);
+		},
+		function () {
+		var currentSource=$(this).attr('src');
+			$(this).attr('src', imgFile);
+	}); 
+    });
+      $('#gallery a').click(function(evt) {
+         evt.preventDefault();
+         var imgPath = $(this).attr('href');
+         var oldImage = $('#image img');
+         var newImage = $('img src="' + imgPath + '">');
+         newImage.hide();
+         $('#image').prepend(newImage);
+         newImage.fadeIn(1000);
+      });
+  });
+  $('#gallery a:first').click();
+</script>
+  </head>
+  <body>
+      <div id="all">
+	<header>
+<img id="ygameheader"
+           src="images/ygameheader.png" alt="Ygame logo image">
+</header>
+
+   <nav>
+            <ul id="navigation">
+	<li><a href="index.html">MAIN</a></li>
+	<li><a href="about.html">ABOUT</a></li>
+        <li><a href="products.html">PRODUCTS</a></li>
+        <li><a href="order.html">ORDER NOW</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+	<li class="selected"><a href="wallpapers.html">WALLPAPERS</a></li>
+        <li><a id="login" href="#">LOGIN</a></li>
+            </ul>
+        </nav>
+    <aside id="ads">
+      <p>
+        ORDER OUR GAMES ONLINE
+	On <a target="_blank" href="http://www.amazon.com">Amazon</a> <br>
+        <span class="gameoffer">
+		<br>
+            Order Now <br>
+            And Receive<br>
+            20% Off <br>
+	Dictator: World Conquest <br>
+        </span>
+      </p>
+      <p>
+        Why wait?  You can download our games in minutes.
+      </p>
+    </aside>
+<div id="main">
+    <div id="gallery">
+        <a href="images/rcb1.jpg"><img id="about1" src="images/thumb/rcb1sm.jpg" alt="Ygame artwork1"></a>
+        <a href="images/rcb2.jpg"><img id="about2" src="images/thumb/rcb2sm.jpg" alt="Ygame artwork2"></a>
+            <a href="images/rcb3.jpg"><img id="about3" src="images/thumb/rcb3sm.jpg" alt="Ygame artwork3"></a>
+ <a href="images/rcb4.jpg"><img id="about4" src="images/thumb/rcb4sm.jpg" alt="Ygame artwork4"></a>
+ <a href="images/rcb6.jpg"><img id="about6" src="images/thumb/rcb6sm.jpg" alt="Ygame artwork6"></a>
+ <a href="images/rcb7.jpg"><img id="about7" src="images/thumb/rcb7sm.jpg" alt="Ygame artwork7"></a>
+ <a href="images/rcb8.jpg"><img id="about8" src="images/thumb/rcb8sm.jpg" alt="Ygame artwork8"></a>
+ <a href="images/rcb9.jpg"><img id="about9" src="images/thumb/rcb9sm.jpg" alt="Ygame artwork9"></a>
+ <a href="images/rcb10.jpg"><img id="about10" src="images/thumb/rcb10sm.jpg" alt="Ygame artwork10"></a>
+ <a href="images/rcb11.jpg"><img id="about11" src="images/thumb/rcb11sm.jpg" alt="Ygame artwork11"></a>
+ <a href="images/rcb12.jpg"><img id="about12" src="images/thumb/rcb12sm.jpg" alt="Ygame artwork12"></a>
+ <a href="images/rcb13.jpg"><img id="about13" src="images/thumb/rcb13sm.jpg" alt="Ygame artwork13"></a>
+</div>
+<div id="image"> </div>
+	<footer>
+        <p>
+        &copy; 2014, YGame<br>
+        All trademarks and registered trademarks appearing on this site are 
+        the property of their respective owners.
+      </p>
+        </footer>
+</div>
+ </body>
+</html>

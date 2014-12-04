@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ygame</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="css/style.css" rel="stylesheet">
+         <link href="images/background1.jpg" rel="image">
+        <script src="js/jquery-1.6.3.min.js"></script>
+         <script src="js/jquery.validate.min.js"></script>
+         <script>
+             
+            $(function() {
+                $('#reg').click(function(){
+                    $('#main').load('register.html');
+                    return false;
+                });
+            });
+            
+            $(document).ready(function() {
+                $('#register form').hide();
+  $('#login').toggle(
+      function() {
+          $('register form').hide();
+	     $('#register form').slideDown(600);
+	     $(this).addClass('close');
+	  },
+	  function() {
+		 $('#register form').slideUp(600);
+	     $(this).removeClass('close');
+      }
+  ); // end toggle
+}); 
+    $(document).ready(function() {
+ $('#registerform').validate({
+   
+   rules: {
+     email: {
+        required: true,
+        email: true
+     },
+     password: {
+        required: true,
+        rangelength:[8,16]
+     },
+     confirm: {equalTo:'#regpassword'},
+     spam: "required"
+   }, //end rules
+   messages: {
+      email: {
+         required: "Please supply an e-mail address.",
+         email: "This is not a valid email address."
+       },
+      password: {
+        required: 'Please type a password',
+        rangelength: 'Password must be between 8 and 16 characters long.'
+      },
+      confirm: {
+        equalTo: 'The two passwords do not match.'
+      }
+   },
+   errorPlacement: function(error, element) { 
+       if ( element.is(":radio") || element.is(":checkbox")) {
+          error.appendTo( element.parent()); 
+        } else {
+          error.insertAfter(element);
+        } 
+    } 
+
+  }); // end validate 
+}); // end ready
+</script>
+    </head>
+    <body>
+        <div id="all">
+        <header><img id="yheader" src="images/ygameheader.png" alt="Ygame logo image"></header>
+        <nav>
+            <ul id="navigation">
+	<li class="selected"><a href="index.html">MAIN</a></li>
+	<li><a href="about.html">ABOUT</a></li>
+        <li><a href="products.html">PRODUCTS</a></li>
+        <li><a href="order.html">ORDER NOW</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+	<li><a href="wallpapers.html">WALLPAPERS</a></li>
+        <li><a id="login" href="#">LOGIN</a></li>
+            </ul>
+        </nav>
+   
+        <aside id="ads"><p>
+        ORDER OUR GAMES ONLINE
+	On <a target="_blank" href="http://www.amazon.com">Amazon</a> <br>
+        <span class="gameoffer">
+		<br>
+            Order Now <br>
+            And Receive<br>
+            20% Off <br>
+	Dictator: World Conquest <br>
+        </span>
+      </p>
+      <p>
+        Why wait?  You can download our games in minutes.
+      </p>
+        </aside>
+        <div id="register">
+              <form>
+                  <div>
+                      <p>
+                            <label for="username" class="label">User Name </label>
+                            <input name="username" type="text" class="required" id="username" title="Please type your user name.">
+                      </p>
+                         
+                            <p>
+                            <label for="password" class="label">Password </label>
+                            <input name="password" type="password" class="required" id="password" title="Please type your password."> </p> 
+                            <p>
+                             <button id="login"> Login </button>
+                            </p>
+                  </div>
+              </form>
+                  <form>
+                  <div>
+                      <p>Don't have an account? </p>
+                      <p>
+                                <button id="reg">Register Now</button>
+                            </p>
+                       
+                  </div> 
+              </form>
+        </div>
+        <div id="main">
+            <h1>Welcome to Ygame!</h1>
+        </div>
+        <footer> <p> &copy; 2014, YGame <br>
+                All trademarks and registered trademarks appearing on this site are the property of their respective owners.</p>
+        </footer>
+        </div>
+    </body>
+</html>

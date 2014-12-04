@@ -1,0 +1,230 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 2, 2014, 7:24:22 PM
+    Author     : bleh
+*/
+
+body { 
+background-color: white;
+  font-family:      Arial, Helvetica, Geneva, san-serif;
+  font-size:        small;
+  margin:           0px 10px;
+  background-image: url(images/background2.gif);
+}
+#all {
+	width: 1125px;
+	margin-left: auto;
+	margin-right: auto;
+}
+header {
+	background-color: #353535;
+	margin: 0px 0px 10px 0px;
+	padding: 0px;
+	height:           120px;
+}
+
+aside {
+  background:       #dfdfdf;
+  font-size:        105%;
+  padding:          15px;
+  border: thin solid black;
+  width: 200px;
+  margin: 20px 20px 20px 20px;
+  text-align: center;
+  float:right;
+}
+
+footer {
+  background-color: #353535;
+  color:            #00fffc;
+  text-align:       center;
+  padding:          15px;
+  margin: 0px 10px 10px 0px;
+  font-size:        90%;
+  clear: both;
+}
+
+h1 {
+  font-size:        170%;
+  color:            black;
+  text-align: center;
+  font-weight: bold;
+}
+
+h2 { 
+	font-size: 150%; 
+	font-weight: bold;
+	text-align: center;
+}
+
+blockquote {
+	font-style: italic;
+}
+em {
+	font-weight: bold;
+}
+ul {
+	font-weight: bold;
+	font-size: 120%;
+}
+form {
+	display: table;
+	margin-bottom: 15px;
+	padding: 10px;
+	border: thin dotted black;
+	background-color: #dfdfdf;
+}
+
+form textarea {
+	width: 500px;
+	height: 200px;
+}
+table {
+  margin-left:      20px;
+  margin-right:     20px;
+  margin-bottom:    20px;
+  border:           thin solid black;
+  caption-side:     top;
+  border-collapse:  collapse;
+}
+
+table table th {
+  background-color: white;
+}
+
+td, th {
+  border:           thin dotted gray;
+  padding:          5px;
+}
+
+th {
+  background-color: #009989;
+}
+
+.cellcolor {
+  background-color: #00ffe4;
+}
+
+
+caption {
+color: Orange;
+  font-style:       italic;
+  padding-top:      5px;
+}
+#main {
+	width: 800px;
+	padding: 15px;
+	margin:  0px 10px 10px 10px;
+}
+#aboutmain {
+	width: 800px;
+	margin: 10px;
+}
+#aboutmain p {
+	text-align: left;
+}
+#ygameguy {
+	margin: 0px 10px 10px 10px;
+	float: left;
+}
+#orderhead {
+	text-align: left;
+}
+#dictator h2 {
+	color: red;
+	text-align: left;
+	margin: 10px;
+}
+#dic {
+	float: left;
+	margin: 0px 10px 10px 10px;
+}
+#stars {
+	float: left;
+}
+#stars h2 {
+	color: blue;
+	text-align: left;
+	clear: left;
+	margin: 15px;
+}
+#tostars {
+	float: left;
+	margin: 0px 10px 10px 10px;
+}
+#blog p {
+	margin: 10px;	
+}
+#aboutpics {
+	border-right: 3px solid black;
+	padding: 10px;
+	margin: 10px;
+	float: left;
+}
+#contact {
+	margin: 10px;
+	float: left;
+}
+.gameoffer {
+	color: red;
+}
+.prod {
+	margin:  10px;
+}
+a:hover {
+  color:            #00ff00;
+  text-decoration:  none;
+  border-bottom:    thin solid #00ff00;
+}
+ a:link {
+  color:            #ffb400;
+  text-decoration:  none;
+  border-bottom:    thin solid #ffb400;
+}
+#prodimg a {
+	text-decoration: none;
+	border-bottom: none;
+}
+#prod1 p {
+	text-align: center;
+}
+ a:visited {
+  color:            #00fffc;
+  text-decoration:  none;
+  border-bottom:    thin solid #00fffc;
+}
+  nav {
+	background-color: black;
+	margin: 10px 10px 10px 10px;
+}
+  nav ul {
+	margin: 0px;
+	list-style-type: none;
+	padding: 5px 0px 5px 0px;
+}
+nav ul li {
+	display: inline;
+	padding: 5px 10px 5px 10px
+}
+nav ul li a:link {
+	color: #ffb400;
+	border-bottom: none;
+	font-weight: bold;
+}
+nav ul li a:visited {
+	color: #00fffc;
+	border-bottom: none;
+	font-weight: bold;
+}
+nav ul li a:hover {
+	color: #00ff00;
+	border-bottom: none;
+	font-weight: bold;
+}
+nav ul li.selected {
+	background-color: #848484;
+}
