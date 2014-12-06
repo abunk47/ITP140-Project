@@ -11,18 +11,32 @@ Once all three questions are answered the user is given an answer to their quest
         <title>Products Page</title>
         <meta charset="UTF-8">
         <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link type="text/css" rel="stylesheet" href="css/tooltipster-punk.css">
         <script src="js/jquery-1.6.3.min.js"></script>
         <script src="js/jquery.validate.min.js"></script>
         <script src="js/jquery-ui.js"></script>
+        <script src="js/jquery.tooltipster.min.js"></script>
         <script>
-            $(document).ready(function() {
+            $(document).ready(function() { 
+                
                 initialize();
+                $('.tooltip').tooltipster({
+                    animation: 'grow',
+                    arrow: 'true',
+                    delay: 200,
+                    theme: 'tooltipster-punk',
+                    trigger: 'hover',
+                    hideOnClick: true
+                });
+                
+                
+                
             }); // end ready
             
             function initialize() {
                 
                 var itemList = [];
-                
+
                 $("#images img").draggable({
                     containment: "#box",
                     cursor: "grab",
@@ -44,6 +58,7 @@ Once all three questions are answered the user is given an answer to their quest
                     }
                 });
                 
+                
                 $("#calculate").click(function(){
                     if (itemList.length == 0){
                         alert("Please put something in the box!");
@@ -62,10 +77,10 @@ Once all three questions are answered the user is given an answer to their quest
                     }
                     else if (itemList.length == 4) {
                         alert("You have no clue what you want do you?");
-                        $("<img src='images/shooter.jpg' alt='Shooter' id='shooter'>").appendTo("#images");
-                        $("<img src='images/strategy.jpg' alt='Strategy' id='strategy'>").appendTo("#images");
-                        $("<img src='images/platformer.jpg' alt='Platformer' id='platformer'>").appendTo("#images");
-                        $("<img src='images/adventure.jpg' alt='Adventure' id='adventure'>").appendTo("#images");
+                        $("<img src='images/shooter.jpg' alt='Shooter' id='shooter' title='Shooter Game'>").appendTo("#images");
+                        $("<img src='images/strategy.jpg' alt='Strategy' id='strategy' title='Strategy Game'>").appendTo("#images");
+                        $("<img src='images/platformer.jpg' alt='Platformer' id='platformer' title='Platformer Game'>").appendTo("#images");
+                        $("<img src='images/adventure.jpg' alt='Adventure' id='adventure' title='Adventure Game'>").appendTo("#images");
                         itemList = [];
                         initialize();
                     }
@@ -100,15 +115,15 @@ Once all three questions are answered the user is given an answer to their quest
             <h1>Drag the game types you like into the treasure chest below!</h1>
             <div id="box">
                 <div id="images">
-                    <img src="images/shooter.jpg" alt="Shooter" id="shooter" >
-                    <img src="images/strategy.jpg" alt="Strategy" id="strategy" >
-                    <img  src="images/platformer.jpg" alt="Platformer" id="platformer">
-                    <img src="images/adventure.jpg" alt="Adventure" id="adventure">
+                    <img src="images/shooter.jpg" alt="Shooter" id="shooter" title="Shooter Game">
+                    <img src="images/strategy.jpg" alt="Strategy" id="strategy" title="Strategy Game">
+                    <img  src="images/platformer.jpg" alt="Platformer" id="platformer" title="Platformer Game">
+                    <img src="images/adventure.jpg" alt="Adventure" id="adventure" title="Adventure Game">
                 
                 </div>
             
                 
-                <img src="images/treasurebox-home.jpg" alt="Treasure" id="treasure">
+                <img src="images/treasurebox-home.jpg" alt="Treasure" id="treasure" title="FEED ME GAMES!!!">
                 <button class="button" id="calculate">Click me when all the games you like are in the treasure!</button>
 
             </div>
