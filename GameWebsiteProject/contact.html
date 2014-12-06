@@ -21,15 +21,15 @@ and open the template in the editor.
             });
             
             $(document).ready(function() {
-  $('#login').toggle(
-      function() {
-	     $('#register form').slideDown(600);
-	     $(this).addClass('close');
-	  },
-	  function() {
-		 $('#register form').slideUp(600);
-	     $(this).removeClass('close');
-      }
+                $('#login').toggle(
+                function() {
+                    $('#register form').slideDown(600);
+                    $(this).addClass('close');
+                },
+                function() {
+                    $('#register form').slideUp(600);
+                    $(this).removeClass('close');
+            }
   ); // end toggle
 }); 
          </script>
