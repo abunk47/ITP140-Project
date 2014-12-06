@@ -228,3 +228,59 @@ nav ul li a:hover {
 nav ul li.selected {
 	background-color: #848484;
 }
+
+#dropbox {
+    border-width: thin;
+    border-color: #00ffe4;
+}
+
+.draggable {
+    
+}
+
+.droppable {
+    
+}
+
+#images{
+    text-align: center;
+}
+#images img{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background: #ccc;
+    margin: 5px;
+}
+
+.button {
+  -moz-border-radius: 25px;
+  -moz-box-shadow: #6E7849 0px 0px 10px;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-border-radius: 25px;
+  -webkit-box-shadow: #6E7849 0 0 10px;
+  -webkit-transition: all 0.5s ease;
+  background-color: #e01028;
+  border-radius: 25px;
+  border: 2px solid #4a5032;
+  box-shadow: #6E7849 0px 0px 10px;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 4em;
+  margin: auto;
+  padding: 40px;
+  text-decoration: none;
+  text-shadow: #000000 5px 5px 15px;
+  transition: all 0.5s ease;
+}
+.button:hover {
+  padding: 15px;
+}
+
+#treasure {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
