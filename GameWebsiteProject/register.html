@@ -62,51 +62,50 @@ and open the template in the editor.
 </script>
     </head>
     <body>
-        <nav>
-            <ul id="navigation">
-	<li class="selected"><a href="index.html">MAIN</a></li>
-	<li><a href="about.html">ABOUT</a></li>
-        <li><a href="products.html">PRODUCTS</a></li>
-        <li><a href="order.html">ORDER NOW</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-	<li><a href="wallpapers.html">WALLPAPERS</a></li>
-        <li><a id="login" href="#">LOGIN</a></li>
-            </ul>
-        </nav>
         <div id="main">
       <h1>Register</h1>
 		<form action="process.html" method="post" name="registerform" id="registerform">
 			<div>
-				<label for="username" class="label">User Name </label>
+                            <p>
+                                <label for="username" class="label">User Name: </label> <br>
 				<input name="username" type="text" class="required" id="username" title="Please type your user name.">
-			</div>
-			<div>
-				<label for="email" class="label">E-mail Address</label>
-				<input name="email" type="email" id="email">
-			</div>
-                         <div>
-				<label for="dob" class="label">Date of birth</label>
-				<input name="dob" type="text" id="dob" class="date" title="Please type your date of birth e.g.(02/07/1985)">
-			</div>
-			<div>
-				<label for="regpassword" class="label">Password</label>
-				<input name="regpassword" type="password" id="regpassword">
-			</div>
-			<div>
-				<label for="confirm" class="label">Confirm Password</label>
-				<input name="confirm" type="password" id="confirm">
-			</div>
+                            </p>
 			
-			<div>
-				<label for="comments" class="label">Signature</label>
+                            <p>
+                                <label for="email" class="label">E-mail Address: </label> <br>
+				<input name="email" type="email" id="email">
+                            </p>
+			
+                             <p>
+                                 <label for="dob" class="label">Date of birth: </label> <br>
+				<input name="dob" type="text" id="dob" class="date" title="Please type your date of birth e.g.(02/07/1985)">
+                             </p>
+			
+                            <p>
+                                <label for="regpassword" class="label">Password: </label> <br>
+				<input name="regpassword" type="password" id="regpassword">
+                            </p>
+			
+                            <p>
+                                <label for="confirm" class="label">Confirm Password: </label> <br>
+				<input name="confirm" type="password" id="confirm">
+                            </p>
+			
+                            <p>
+                                <label for="comments" class="label">Signature: </label> <br>
 				<textarea name="comments" id="comments"></textarea>
-			</div>
+                            </p>
+			
+                    
 			<div>Would you like to receive e-mail notifications? </div>
+                
 			<div>
+                            <p>
 				<input  type="radio" name="spam" id="yes" value="yes" class="required" title="Please select an option">
 				<label for="yes">Yes</label>
 				<input type="radio" name="spam" id="no" class="required" value="no">
 				<label for="no">No</label>
+                            </p>
 			</div>
 			<div>
 				<input type="submit" name="submit" id="submit" value="Submit">
@@ -115,3 +114,4 @@ and open the template in the editor.
 		</div>
     </body>
 </html>
+
