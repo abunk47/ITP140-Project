@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Registration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link type="text/css" rel="stylesheet" href="css/style.css">
+          <script src="js/jquery.validate.min.js"></script>
+          <script src="js/jquery-1.6.3.min.js"></script>
+         <script>
+    $(document).ready(function() {
+ $('#registerform').validate({
+   
+   rules: {
+     email: {
+        required: true,
+        email: true
+     },
+     dob: {
+         required: true,
+         date: true
+     },
+     password: {
+        required: true,
+        rangelength:[8,16]
+     },
+     confirm: {equalTo:'#regpassword'},
+     spam: "required"
+   }, //end rules
+   messages: {
+      email: {
+         required: "Please supply an e-mail address.",
+         email: "This is not a valid email address."
+       },
+       dob: {
+        required: "Please enter a date.",
+        date: "Please enter a valid date."
+     },
+      password: {
+        required: 'Please type a password',
+        rangelength: 'Password must be between 8 and 16 characters long.'
+      },
+      confirm: {
+        equalTo: 'The two passwords do not match.'
+      }
+   },
+   errorPlacement: function(error, element) { 
+       if ( element.is(":radio") || element.is(":checkbox")) {
+          error.appendTo( element.parent()); 
+        } else {
+          error.insertAfter(element);
+        } 
+    } 
+
+  }); // end validate 
+}); // end ready
+</script>
+    </head>
+    <body>
+    <nav>
+            <ul id="navigation">
+	<li class="selected"><a href="index.html">MAIN</a></li>
+	<li><a href="about.html">ABOUT</a></li>
+        <li><a href="products.html">PRODUCTS</a></li>
+        <li><a href="order.html">ORDER NOW</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+	<li><a href="wallpapers.html">WALLPAPERS</a></li>
+        <li><a id="login" href="#">LOGIN</a></li>
+            </ul>
+        </nav>
+<div id="main">
+	<div class="header">
+	</div>
+	<div class="content">
+		<div class="main">
+			<h1>Thanks for the Comment!</h1>
+			<p>We appreciate your input. <br></p>
+                        <a href="index.html">Return to Main</a>
+		</div>
+	</div>
+	<div class="footer">
+	</div>
+</div>
+    </body>
+</html>
+
