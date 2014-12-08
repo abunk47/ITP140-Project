@@ -17,6 +17,27 @@ Once all three questions are answered the user is given an answer to their quest
         <script src="js/jquery-ui.js"></script>
         <script src="js/jquery.tooltipster.min.js"></script>
         <script>
+        $(function() {
+                $('#reg').click(function(){
+                    $('#main').load('register.html');
+                    return false;
+                });
+            });
+            
+            $(document).ready(function() {
+                $('#register form').hide();
+  $('#login').toggle(
+      function() {
+          $('register form').hide();
+	     $('#register form').slideDown(600);
+	     $(this).addClass('close');
+	  },
+	  function() {
+		 $('#register form').slideUp(600);
+	     $(this).removeClass('close');
+      }
+  ); // end toggle
+});     
             $(document).ready(function() { 
                 
                 initialize();
@@ -112,6 +133,49 @@ Once all three questions are answered the user is given an answer to their quest
                 <li><a id="login" href="#">LOGIN</a></li>
             </ul>
         </nav>
+                    <aside id="ads">
+         <div id="register">
+              <form>
+                  <div>
+                      <p>
+                            <label for="username" class="label">User Name </label>
+                            <input name="username" type="text" class="required" id="username" title="Please type your user name.">
+                      </p>
+                         
+                            <p>
+                            <label for="password" class="label">Password </label>
+                            <input name="password" type="password" class="required" id="password" title="Please type your password."> </p> 
+                            <p>
+                             <button id="login"> Login </button>
+                            </p>
+                  </div>
+              </form>
+                  <form>
+                  <div>
+                      <p>Don't have an account? </p>
+                      <p>
+                                <button id="reg">Register Now</button>
+                            </p>
+                       
+                  </div> 
+              </form>
+        </div>
+      <p>
+        ORDER OUR GAMES ONLINE
+	On <a target="_blank" href="http://www.amazon.com">Amazon</a> <br>
+        <span class="gameoffer">
+		<br>
+            Order Now <br>
+            And Receive<br>
+            20% Off <br>
+	Dictator: World Conquest <br>
+        </span>
+      </p>
+      <p>
+        Why wait?  You can download our games in minutes.
+      </p>
+    </aside>
+    <div id="main">
             <h1>Drag the game types you like into the treasure chest below!</h1>
             <div id="box">
                 <div id="images">
@@ -135,5 +199,6 @@ Once all three questions are answered the user is given an answer to their quest
                 the property of their respective owners.
             </p>
         </footer>
+        </div>
     </body>
 </html>
