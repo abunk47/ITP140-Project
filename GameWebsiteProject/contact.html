@@ -13,7 +13,7 @@ and open the template in the editor.
     <script src="js/jquery-1.6.3.min.js"></script>
          <script src="js/jquery.validate.min.js"></script>
          <script>                 
-            $(function() {
+ $(function() {
                 $('#reg').click(function(){
                     $('#main').load('register.html');
                     return false;
@@ -21,15 +21,17 @@ and open the template in the editor.
             });
             
             $(document).ready(function() {
-                $('#login').toggle(
-                function() {
-                    $('#register form').slideDown(600);
-                    $(this).addClass('close');
-                },
-                function() {
-                    $('#register form').slideUp(600);
-                    $(this).removeClass('close');
-            }
+                $('#register form').hide();
+  $('#login').toggle(
+      function() {
+          $('register form').hide();
+	     $('#register form').slideDown(600);
+	     $(this).addClass('close');
+	  },
+	  function() {
+		 $('#register form').slideUp(600);
+	     $(this).removeClass('close');
+      }
   ); // end toggle
 }); 
          </script>
@@ -52,6 +54,32 @@ and open the template in the editor.
             </ul>
         </nav>
     <aside id="ads">
+         <div id="register">
+              <form>
+                  <div>
+                      <p>
+                            <label for="username" class="label">User Name </label>
+                            <input name="username" type="text" class="required" id="username" title="Please type your user name.">
+                      </p>
+                         
+                            <p>
+                            <label for="password" class="label">Password </label>
+                            <input name="password" type="password" class="required" id="password" title="Please type your password."> </p> 
+                            <p>
+                             <button id="login"> Login </button>
+                            </p>
+                  </div>
+              </form>
+                  <form>
+                  <div>
+                      <p>Don't have an account? </p>
+                      <p>
+                                <button id="reg">Register Now</button>
+                            </p>
+                       
+                  </div> 
+              </form>
+        </div>
       <p>
         ORDER OUR GAMES ONLINE
 	On <a target="_blank" href="http://www.amazon.com">Amazon</a> <br>
@@ -70,7 +98,7 @@ and open the template in the editor.
 
     <h1>Please Send Us Your Message Below!</h1>
  <div id="main">
- <form action="http://starbuzzcoffee.com/processorder.php" method="post">
+ <form action="reply.html" method="post">
 		<p>
           Name:
             <input type="text" name="name" value=""><br>
