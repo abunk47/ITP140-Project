@@ -6,7 +6,27 @@
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <script src="js/jquery-1.6.3.min.js"></script>
 <script>
-                
+        $(function() {
+                $('#reg').click(function(){
+                    $('#main').load('register.html');
+                    return false;
+                });
+            });
+            
+            $(document).ready(function() {
+                $('#register form').hide();
+  $('#login').toggle(
+      function() {
+          $('register form').hide();
+	     $('#register form').slideDown(600);
+	     $(this).addClass('close');
+	  },
+	  function() {
+		 $('#register form').slideUp(600);
+	     $(this).removeClass('close');
+      }
+  ); // end toggle
+});             
   $(document).ready(function() {
       $('#gallery img').each(function(i) {
 	var imgFile = $(this).attr('src');
@@ -55,6 +75,32 @@
             </ul>
         </nav>
     <aside id="ads">
+         <div id="register">
+              <form>
+                  <div>
+                      <p>
+                            <label for="username" class="label">User Name </label>
+                            <input name="username" type="text" class="required" id="username" title="Please type your user name.">
+                      </p>
+                         
+                            <p>
+                            <label for="password" class="label">Password </label>
+                            <input name="password" type="password" class="required" id="password" title="Please type your password."> </p> 
+                            <p>
+                             <button id="login"> Login </button>
+                            </p>
+                  </div>
+              </form>
+                  <form>
+                  <div>
+                      <p>Don't have an account? </p>
+                      <p>
+                                <button id="reg">Register Now</button>
+                            </p>
+                       
+                  </div> 
+              </form>
+        </div>
       <p>
         ORDER OUR GAMES ONLINE
 	On <a target="_blank" href="http://www.amazon.com">Amazon</a> <br>
@@ -86,6 +132,7 @@
  <a href="images/rcb13.jpg"><img id="about13" src="images/thumb/rcb13sm.jpg" alt="Ygame artwork13"></a>
 </div>
 <div id="image"> </div>
+</div>
 	<footer>
         <p>
         &copy; 2014, YGame<br>
@@ -96,3 +143,4 @@
 </div>
  </body>
 </html>
+
