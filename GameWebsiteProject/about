@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>About Ygame</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+        <script src="js/jquery-1.6.3.min.js"></script>
+         <script src="js/jquery.validate.min.js"></script>
+             <script>                 
+ $(function() {
+                $('#reg').click(function(){
+                    $('#main').load('register.html');
+                    return false;
+                });
+            });
+            
+            $(document).ready(function() {
+                $('#register form').hide();
+  $('#login').toggle(
+      function() {
+          $('register form').hide();
+	     $('#register form').slideDown(600);
+	     $(this).addClass('close');
+	  },
+	  function() {
+		 $('#register form').slideUp(600);
+	     $(this).removeClass('close');
+      }
+  ); // end toggle
+}); 
+         </script>
+  </head>
+  <body>
+<div id="all">
+    <header>
+<img id="ygameheader"
+           src="images/ygameheader.png" alt="Ygame logo image">
+</header>
+
+<nav>
+            <ul id="navigation">
+	<li><a href="index.html">MAIN</a></li>
+	<li class="selected"><a href="about.html">ABOUT</a></li>
+        <li><a href="products.html">PRODUCTS</a></li>
+        <li><a href="order.html">ORDER NOW</a></li>
+        <li ><a href="contact.html">CONTACT</a></li>
+	<li><a href="wallpapers.html">WALLPAPERS</a></li>
+        <li><a id="login" href="#">LOGIN</a></li>
+            </ul>
+        </nav>
+    <aside id="ads">
+         <div id="register">
+              <form>
+                  <div>
+                      <p>
+                            <label for="username" class="label">User Name </label>
+                            <input name="username" type="text" class="required" id="username" title="Please type your user name.">
+                      </p>
+                         
+                            <p>
+                            <label for="password" class="label">Password </label>
+                            <input name="password" type="password" class="required" id="password" title="Please type your password."> </p> 
+                            <p>
+                             <button id="login"> Login </button>
+                            </p>
+                  </div>
+              </form>
+                  <form>
+                  <div>
+                      <p>Don't have an account? </p>
+                      <p>
+                                <button id="reg">Register Now</button>
+                            </p>
+                       
+                  </div> 
+              </form>
+        </div>
+      <p>
+        ORDER OUR GAMES ONLINE
+	On <a target="_blank" href="http://www.amazon.com">Amazon</a> <br>
+        <span class="gameoffer">
+		<br>
+            Order Now <br>
+            And Receive<br>
+            20% Off <br>
+	Dictator: World Conquest <br>
+        </span>
+      </p>
+      <p>
+        Why wait?  You can download our games in minutes.
+      </p>
+    </aside>
+<div id="aboutpics">
+<img id="about1"
+           src="images/about1.png" alt="Ygame artwork1">
+<br>
+<img id="about2"
+           src="images/about2.jpg" alt="Ygame artwork2">
+<br>
+<img id="about3"
+           src="images/about3.png" alt="Ygame artwork3">
+</div>
+<div id="main">
+	<h1>About YGame</h1>
+	<p>YGame was started by one person. Alone, with nothing to do, this person began to make images, code, and bang his head against his desk when things didn't always work. Then came another person who helped make it better.</p>
+    <h2 id="mission">YGame's Mission</h2>
+    <p>	To explore strange new computer generated worlds. To seek out new games and new programming challenges. To boldly go where no small game company has gone before.
+    </p>
+	<h2>YGame's Work</h2>
+<p>To left you can examine some of the fine graphic work done at YGame. From simple dishes, to depictions of cyberspace and far eastern jewelry, YGame does it all!</p>
+<h2>YGame's Games</h2>
+<p>Some of our games include:</p>
+<ul>
+    <li>Dictator: World Conquest</li>
+    <li>To The Stars!</li>
+</ul>
+</div>
+		<footer>
+ <p>
+        &copy; 2014, YGame<br>
+        All trademarks and registered trademarks appearing on this site are 
+        the property of their respective owners.
+      </p></footer>
+</div>
+  </body>
+</html>
