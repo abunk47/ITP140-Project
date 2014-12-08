@@ -7,7 +7,29 @@
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery-1.6.3.min.js"></script>
     <script src="js/jquery-ui.js"></script>
-    <script> $(document).ready(function() {
+    <script> 
+     $(function() {
+                $('#reg').click(function(){
+                    $('#main').load('register.html');
+                    return false;
+                });
+            });
+            
+            $(document).ready(function() {
+                $('#register form').hide();
+  $('#login').toggle(
+      function() {
+          $('register form').hide();
+	     $('#register form').slideDown(600);
+	     $(this).addClass('close');
+	  },
+	  function() {
+		 $('#register form').slideUp(600);
+	     $(this).removeClass('close');
+      }
+  ); // end toggle
+});     
+    $(document).ready(function() {
         
         var states = ["AK", "AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA",
             "HI","IA","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO",
@@ -32,7 +54,7 @@
      address: "required"
      ,
      city: "required"    
-   },
+       ,
      quantity: {
         required: true,
         rangelength:[1,20]
@@ -61,6 +83,16 @@
          required: true,
          range: [8,10]
      },
+     custcard: {
+         required: true,
+         creditcard: true
+     },
+       cardconfirm: {
+         required: true,
+         creditcard: true,
+         confirm: {equalTo:'#custcard'}
+     }
+ },
    messages: {
       custemail: {
          required: "Please supply an e-mail address.",
@@ -93,13 +125,39 @@
 	<li><a href="index.html">MAIN</a></li>
 	<li><a href="about.html">ABOUT</a></li>
         <li><a href="products.html">PRODUCTS</a></li>
-        <li><a class="selected" href="order.html">ORDER NOW</a></li>
+        <li class="selected"><a  href="order.html">ORDER NOW</a></li>
         <li><a href="contact.html">CONTACT</a></li>
 	<li><a href="wallpapers.html">WALLPAPERS</a></li>
         <li><a id="login" href="#">LOGIN</a></li>
             </ul>
         </nav>
     <aside id="ads">
+         <div id="register">
+              <form>
+                  <div>
+                      <p>
+                            <label for="username" class="label">User Name </label>
+                            <input name="username" type="text" class="required" id="username" title="Please type your user name.">
+                      </p>
+                         
+                            <p>
+                            <label for="password" class="label">Password </label>
+                            <input name="password" type="password" class="required" id="password" title="Please type your password."> </p> 
+                            <p>
+                             <button id="login"> Login </button>
+                            </p>
+                  </div>
+              </form>
+                  <form>
+                  <div>
+                      <p>Don't have an account? </p>
+                      <p>
+                                <button id="reg">Register Now</button>
+                            </p>
+                       
+                  </div> 
+              </form>
+        </div>
       <p>
         ORDER OUR GAMES ONLINE
 	On <a target="_blank" href="http://www.amazon.com">Amazon</a> <br>
@@ -115,7 +173,7 @@
         Why wait?  You can download our games in minutes.
       </p>
     </aside>
-
+            <div id="main">
     <h1 id="orderhead">Order Below:</h1>
   <form action="processorder.html" method="post" name="order" id="order">
 	<fieldset>
@@ -171,7 +229,7 @@
 		<label for="custphone"> Phone: </label>
 		<p> <input type="tel" id="custphone" name="phone" class="required" value="" placeholder="e.g. (888)888-8888" required> </p>
 		<label for="custemail"> E-Mail: </label>
-		<p> <input type="email" id="custemail" name="email" class="required" value="" placeholder="blah@blah.com" required> </p>
+		<p> <input type="email" id="custemail" name="email" class="email" value="" placeholder="blah@blah.com" required> </p>
 	</fieldset>
       <fieldset>
 		<legend> Billing: </legend>
@@ -189,7 +247,11 @@
 		<label for="custphone"> Phone: </label>
 		<p> <input type="tel" id="custphone2" name="phone" class="required" value="" placeholder="e.g. (888)888-8888" required> </p>
 		<label for="custemail"> E-Mail: </label>
-		<p> <input type="email" id="custemail2" name="email" class="required" value="" placeholder="blah@blah.com" required> </p>
+		<p> <input type="email" id="custemail2" name="email" class="email" value="" placeholder="blah@blah.com" required> </p>
+                <label for="custcard"> Credit Card Number: </label>
+		<p> <input type="text" id="custcard" name="creditcard" class="creditcard" value="" placeholder=" " required> </p>
+                <label for="custcard"> Confirm Credit Card Number: </label>
+		<p> <input type="text" id="cardconfirm" name="cardconfirm" class="creditcard" value="" placeholder=" " required> </p>
 	</fieldset>
 	<fieldset>
 		<legend> Customer Comments: </legend>
@@ -204,6 +266,7 @@
 		<p> <input type="submit" value="Order Now"> </p>
 	</div>
     </form>
+            </div>
 		<footer>
  <p>
         &copy; 2014, YGame<br>
