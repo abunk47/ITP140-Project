@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <title>Order Now!</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
-    <script src="js/jquery.validate.min.js"></script>
+    
     <script src="js/jquery-1.6.3.min.js"></script>
     <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
     <script> 
      $(function() {
                 $('#reg').click(function(){
@@ -39,9 +40,9 @@
         
         $("#custstate").autocomplete({source: states});
         $("#custstate2").autocomplete({source: states});
+        // added a regex to test for valid zip codes
         
-        
-        $('#order').validate({
+        $('#order').validate({ 
             rules: {
                 custemail: {
                     required: true,
@@ -100,9 +101,6 @@
                         error.insertAfter(element);
                     }
                 }            
-            },
-            submit: function(form){
-                $(form).submit();
             }
         }); // end validate 
     }); // end ready
