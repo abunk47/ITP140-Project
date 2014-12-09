@@ -8,6 +8,7 @@
     <script src="js/jquery-1.6.3.min.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.js"></script>
     <script> 
      $(function() {
                 $('#reg').click(function(){
@@ -40,6 +41,8 @@
         
         $("#custstate").autocomplete({source: states});
         $("#custstate2").autocomplete({source: states});
+        
+       // jQuery.validator.addMethod("stateUS", function(value) { var states = [,"AK","AZ","AR","CA","CO","CT","DE","DC","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","MD","MA","MI","MN","MS","MO","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY" ] var in_array = $.inArray(value.toUpperCase(), states); if (in_array == -1) { return false; }else{ return true; } }, "Please enter a valid US state");
         /* added a regex to test for valid zip codes
        jQuery.validator.addMethod("zipRegex", function(value, element) {
                 return /^\d{5}(?:[-\s]\d{4})?$/.test( element.value );
@@ -52,45 +55,56 @@
                     required: true,
                     email: true
                 },
-                    // shipping: "required", not sure how to include this 
+                     shipping: "required",
+                     cardtype: "required",
+                     //not sure how to include this 
                     // one without an ID for the shipping radio buttons
                 custname: {    
-                    name: "required"},
+                    required:true
+               
+            },
                 custaddress: {
-                    address: "required"},
+                    required: true},
                 custcity: {
-                    city: "required"},
+                    required: true},
                 quantity: {
                     required: true,
-                    angelength:[1,20]}, 
+                    rangelength:[1,20]}, 
                 custzip: {
                     required: true,
-                    range: [5]},
+                    zipcodeUS: true
+                   },
                 custzip2: {
                     required: true,
-                    range:[5]},
+                    zipcodeUS: true
+                },
                 custstate: {
-                    required: true,
-                    max: [2]},
+                    required: true
+                
+                },
                 custstate2: {
-                    required: true,
-                    max: [2]},
+                    required: true
+                    
+                },
                 custphone: {
                     required: true,
-                    range: [8,10]},
+                    phoneUS: true},
                 custphone2: {
                     required: true,
-                    range: [8,10]},
+                    phoneUS: true},
                 custcard: {
                     required: true,
                     creditcard: true},
                 cardconfirm: {
                     required: true,
-                    creditcard: true,
-                    confirm: {equalTo:'#custcard'}
-                }
+                    equalTo:'#custcard'}
+                
             },
             messages: {
+                custname: {
+                    required: "Please supply your name."
+             
+                },
                 custemail: {
                     required: "Please supply an e-mail address.",
                     email: "This is not a valid email address."},
@@ -98,6 +112,14 @@
                     required: "Please place an order.",
                     rangelength:"Please contact our official distributer for orders \n\
                                  exceeding twenty copies."},
+                custzip: {
+                    required: "Please enter a zip code.",
+                    range: "Please enter a correct zip code."
+                },
+                custphone: {
+                    required: "Please supply a phone number.",
+                    phoneUS: "This is not a valid phone number."
+                },
                 errorPlacement: function(error, element) { 
                     if ( element.is(":radio") || element.is(":checkbox")) {
                         error.appendTo( element.parent()); 
@@ -210,44 +232,49 @@
 		</p>
 	</fieldset>
 	<fieldset>
-		<legend> Ship to: </legend>
-		<p></p>
-		<label for="custname"> Name: </label>
-		<p> <input type="text" id="custname" name="name" class="required" value="" placeholder="Customer Name" required> </p>
-		<label for="custaddress"> Address: </label>
-		<p> <input type="text" id="custaddress" name="address" class="required" value="" placeholder="Shipping Address" required> </p>
-		<label for="custcity"> City: </label>
-		<p> <input type="text" id="custcity" name="city" class="required" value="" placeholder="City" required> </p>
-		<label for="custstate"> State: </label>
-		<p> <input type="text" id="custstate" name="state" class="required" value="" placeholder="VA" required> </p>
-		<label for="custzip"> Zip: </label>
-		<p> <input type="text" id="custzip" name="zip" class="required" value="" placeholder="Zip Code" required> </p>
-		<label for="custphone"> Phone: </label>
-		<p> <input type="tel" id="custphone" name="phone" class="required" value="" placeholder="e.g. (888)888-8888" required> </p>
-		<label for="custemail"> E-Mail: </label>
-		<p> <input type="email" id="custemail" name="email" class="email" value="" placeholder="blah@blah.com" required> </p>
-	</fieldset>
-      <fieldset>
 		<legend> Billing: </legend>
 		<p></p>
 		<label for="custname"> Name: </label>
-		<p> <input type="text" id="custname2" name="name" class="required" value="" placeholder="Customer Name" required> </p>
+		<p> <input type="text" id="custname" name="custname" class="required" value="" placeholder="Customer Name"> </p>
 		<label for="custaddress"> Address: </label>
-		<p> <input type="text" id="custaddress2" name="address" class="required" value="" placeholder="Billing Address" required> </p>
+		<p> <input type="text" id="custaddress" name="custaddress" class="required" value="" placeholder="Shipping Address"> </p>
 		<label for="custcity"> City: </label>
-		<p> <input type="text" id="custcity2" name="city" class="required" value="" placeholder="City" required> </p>
+		<p> <input type="text" id="custcity" name="custcity" class="required" value="" placeholder="City" > </p>
 		<label for="custstate"> State: </label>
-		<p> <input type="text" id="custstate2" name="state" class="required" value="" placeholder="VA" required> </p>
+		<p> <input type="text" id="custstate" name="custstate" class="required" value="" placeholder="VA" > </p>
 		<label for="custzip"> Zip: </label>
-		<p> <input type="text" id="custzip2" name="zip" class="required" value="" placeholder="Zip Code" required> </p>
+		<p> <input type="text" id="custzip" name="custzip" class="zipcodeUS" value="" placeholder="Zip Code" > </p>
 		<label for="custphone"> Phone: </label>
-		<p> <input type="tel" id="custphone2" name="phone" class="required" value="" placeholder="e.g. (888)888-8888" required> </p>
+		<p> <input type="tel" id="custphone" name="custphone" class="phoneUS" value="" placeholder="e.g. (888)888-8888" > </p>
 		<label for="custemail"> E-Mail: </label>
-		<p> <input type="email" id="custemail2" name="email" class="email" value="" placeholder="blah@blah.com" required> </p>
+		<p> <input type="email" id="custemail" name="email" class="email" value="" placeholder="blah@blah.com" > </p>
+                <p>
+                <input type="radio" id="visa" name="cardtype" class="required" value=" " checked> <label for="cardtype"> Visa</label>
+                <input type="radio" id="mastercard" name="cardtype" class="required" value=" " > <label for="cardtype"> Master Card</label>
+                </p>
                 <label for="custcard"> Credit Card Number: </label>
-		<p> <input type="text" id="custcard" name="creditcard" class="creditcard" value="" placeholder=" " required> </p>
+		<p> <input type="text" id="custcard" name="custcard" class="custcard" value="" placeholder=" " > </p>
                 <label for="custcard"> Confirm Credit Card Number: </label>
-		<p> <input type="text" id="cardconfirm" name="cardconfirm" class="creditcard" value="" placeholder=" " required> </p>
+		<p> <input type="text" id="cardconfirm" name="cardconfirm" class="cardconfirm" value="" placeholder=" " > </p>
+        </fieldset>
+      <fieldset>
+		<legend> Shipping: </legend>
+		<p></p>
+		<label for="custname"> Name: </label>
+		<p> <input type="text" id="custname2" name="custname2" class="required" value="" placeholder="Customer Name" > </p>
+		<label for="custaddress"> Address: </label>
+		<p> <input type="text" id="custaddress2" name="custaddress2" class="required" value="" placeholder="Billing Address" > </p>
+		<label for="custcity"> City: </label>
+		<p> <input type="text" id="custcity2" name="custcity2" class="required" value="" placeholder="City" > </p>
+		<label for="custstate"> State: </label>
+		<p> <input type="text" id="custstate2" name="custstate2" class="required" value="" placeholder="VA" > </p>
+		<label for="custzip"> Zip: </label>
+		<p> <input type="text" id="custzip2" name="custzip2" class="required" value="" placeholder="Zip Code" > </p>
+		<label for="custphone"> Phone: </label>
+		<p> <input type="tel" id="custphone2" name="custphone2" class="required" value="" placeholder="e.g. (888)888-8888" > </p>
+		<label for="custemail"> E-Mail: </label>
+		<p> <input type="email" id="custemail2" name="custemail2" class="email" value="" placeholder="blah@blah.com" > </p>
+                
 	</fieldset>
 	<fieldset>
 		<legend> Customer Comments: </legend>
