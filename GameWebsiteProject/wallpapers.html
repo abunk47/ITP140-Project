@@ -4,9 +4,14 @@
     <meta charset="utf-8">
     <title>Wall Papers</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/colorbox.css" />
     <script src="js/jquery-1.6.3.min.js"></script>
+    <script src="js/jquery.colorbox.js"></script>
 <script>
-        $(function() {
+    $(document).ready(function(){
+        $(".gal").colorbox({rel:'gal'});
+    });
+    $(function() {
                 $('#reg').click(function(){
                     $('#main').load('register.html');
                     return false;
@@ -118,18 +123,18 @@
     </aside>
 <div id="main">
     <div id="gallery">
-        <a href="images/rcb1.jpg"><img id="about1" src="images/thumb/rcb1sm.jpg" alt="Ygame artwork1"></a>
-        <a href="images/rcb2.jpg"><img id="about2" src="images/thumb/rcb2sm.jpg" alt="Ygame artwork2"></a>
-            <a href="images/rcb3.jpg"><img id="about3" src="images/thumb/rcb3sm.jpg" alt="Ygame artwork3"></a>
- <a href="images/rcb4.jpg"><img id="about4" src="images/thumb/rcb4sm.jpg" alt="Ygame artwork4"></a>
- <a href="images/rcb6.jpg"><img id="about6" src="images/thumb/rcb6sm.jpg" alt="Ygame artwork6"></a>
- <a href="images/rcb7.jpg"><img id="about7" src="images/thumb/rcb7sm.jpg" alt="Ygame artwork7"></a>
- <a href="images/rcb8.jpg"><img id="about8" src="images/thumb/rcb8sm.jpg" alt="Ygame artwork8"></a>
- <a href="images/rcb9.jpg"><img id="about9" src="images/thumb/rcb9sm.jpg" alt="Ygame artwork9"></a>
- <a href="images/rcb10.jpg"><img id="about10" src="images/thumb/rcb10sm.jpg" alt="Ygame artwork10"></a>
- <a href="images/rcb11.jpg"><img id="about11" src="images/thumb/rcb11sm.jpg" alt="Ygame artwork11"></a>
- <a href="images/rcb12.jpg"><img id="about12" src="images/thumb/rcb12sm.jpg" alt="Ygame artwork12"></a>
- <a href="images/rcb13.jpg"><img id="about13" src="images/thumb/rcb13sm.jpg" alt="Ygame artwork13"></a>
+        <a href="images/rcb1.jpg" class="gal"><img id="about1" src="images/thumb/rcb1sm.jpg"  alt="Ygame artwork1"></a>
+        <a href="images/rcb2.jpg" class="gal"><img id="about2" src="images/thumb/rcb2sm.jpg"  alt="Ygame artwork2"></a>
+            <a href="images/rcb3.jpg" class="gal"><img id="about3" src="images/thumb/rcb3sm.jpg" alt="Ygame artwork3"></a>
+ <a href="images/rcb4.jpg" class="gal"><img id="about4" src="images/thumb/rcb4sm.jpg"  alt="Ygame artwork4"></a>
+ <a href="images/rcb6.jpg" class="gal"><img id="about6" src="images/thumb/rcb6sm.jpg"  alt="Ygame artwork6"></a>
+ <a href="images/rcb7.jpg" class="gal"><img id="about7" src="images/thumb/rcb7sm.jpg" alt="Ygame artwork7"></a>
+ <a href="images/rcb8.jpg" class="gal"><img id="about8" src="images/thumb/rcb8sm.jpg"  alt="Ygame artwork8"></a>
+ <a href="images/rcb9.jpg" class="gal"><img id="about9" src="images/thumb/rcb9sm.jpg" alt="Ygame artwork9"></a>
+ <a href="images/rcb10.jpg" class="gal"><img id="about10" src="images/thumb/rcb10sm.jpg"  alt="Ygame artwork10"></a>
+ <a href="images/rcb11.jpg" class="gal"><img id="about11" src="images/thumb/rcb11sm.jpg"  alt="Ygame artwork11"></a>
+ <a href="images/rcb12.jpg" class="gal"><img id="about12" src="images/thumb/rcb12sm.jpg"  alt="Ygame artwork12"></a>
+ <a href="images/rcb13.jpg" class="gal"><img id="about13" src="images/thumb/rcb13sm.jpg" alt="Ygame artwork13"></a>
 </div>
 <div id="image"> </div>
 </div>
