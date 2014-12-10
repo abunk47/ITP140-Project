@@ -64,13 +64,14 @@ h2 {
 blockquote {
 	font-style: italic;
 }
-em {
-	font-weight: bold;
-}
 ul {
 	font-weight: bold;
 	font-size: 120%;     
 }
+em {
+	font-weight: bold;
+}
+
 form {
 	display: table;
 	margin-bottom: 15px;
@@ -129,13 +130,11 @@ color: Orange;
 #main ul{
     float: left;
 }
-#register {
-    clear: right;
-}
 #ygameguy {
 	margin: 10px 10px 10px 10px;
         text-align: center;
 }
+
 #orderhead {
 	text-align: left;
 }
