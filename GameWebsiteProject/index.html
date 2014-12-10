@@ -14,6 +14,7 @@ and open the template in the editor.
          <link href="images/background1.jpg" rel="image">
         <script src="js/jquery-2.1.1.min.js"></script>
          <script src="js/jquery.validate.min.js"></script>
+                <script src="js/jquery-ui.js"></script>
          <script>
              
             $(function() {
@@ -22,6 +23,7 @@ and open the template in the editor.
                     return false;
                 });
             });
+          
             
            /* $(document).ready(function() {
                 $('#register form').hide();
@@ -41,6 +43,7 @@ and open the template in the editor.
     $(document).ready(function() {
         $('#register form').hide();
         var isExpanded = true;
+
 
     $("#login").bind("click", function(){
         if(isExpanded) {   
@@ -156,7 +159,7 @@ and open the template in the editor.
             <h1>Welcome to Ygame!</h1>
              
               <div id='ygameguy'>      
-<img src="images/ygame.jpg" alt="Ygame guy">
+<img src="images/ygame.jpg" id="ygamelogo" alt="Ygame guy">
               </div>
         </div>
         <footer> <p> &copy; 2014, YGame <br>

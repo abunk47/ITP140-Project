@@ -109,7 +109,13 @@ th {
 .cellcolor {
   background-color: #00ffe4;
 }
-
+.ans {
+    display:none;
+}
+.faq {
+    color: maroon;
+    cursor: pointer;
+}
 label.error{
     font-size: 0.8em;
     color: red;
@@ -122,6 +128,9 @@ color: Orange;
   font-style:       italic;
   padding-top:      5px;
 }
+input {
+    width: 150px;
+}
 #main {
 	width: 800px;
 	padding: 15px;
@@ -133,6 +142,9 @@ color: Orange;
 #ygameguy {
 	margin: 10px 10px 10px 10px;
         text-align: center;
+}
+#size {
+    float: right;
 }
 
 #orderhead {
@@ -175,11 +187,13 @@ color: Orange;
 	padding: 10px;
 	margin: 10px;
 	float: left;
+        height: 600px;
 }
 #contact {
 	margin: 10px;
 	float: left;
 }
+
 .gameoffer {
 	color: red;
 }

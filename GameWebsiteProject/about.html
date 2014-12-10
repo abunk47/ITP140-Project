@@ -6,14 +6,38 @@
     <link type="text/css" rel="stylesheet" href="css/style.css">
         <script src="js/jquery-2.1.1.min.js"></script>
          <script src="js/jquery.validate.min.js"></script>
-             <script>                 
+         <script src="js/jquery-ui.js"></script>
+         <script src="js/jquery.cycle2.min.js"></script>
+         <script src="js/jquery.cycle2.scrollVert.js"></script>
+             <script>   
  $(function() {
                 $('#reg').click(function(){
                     $('#main').load('register.html');
                     return false;
                 });
             });
-            
+       
+       $(document).ready(function() {
+    $('.faq').click(function() {
+
+        $(this).next('.ans').slideToggle(500);
+       
+
+    });
+}); // end ready
+$(document).ready(function() {
+	  $('#plus').click(function(){   
+	        curSize= parseInt($('#main p').css('font-size')) + 2;
+	  if(curSize<=20)
+	        $('#main p').css('font-size', curSize);
+	        }); 
+	  $('#minus').click(function(){   
+	        curSize= parseInt($('#main p').css('font-size')) - 2;
+	  if(curSize>=10)
+	        $('#main p').css('font-size', curSize);
+	        });
+	 });
+
           /*  $(document).ready(function() {
                 $('#register form').hide();
   $('#login').toggle(
@@ -106,18 +130,25 @@
         Why wait?  You can download our games in minutes.
       </p>
     </aside>
-<div id="aboutpics">
+<div id="aboutpics" class="cycle-slideshow"    data-cycle-fx="scrollVert"    data-cycle-pause-on-hover="true"
+    data-cycle-speed="500">
+  
 <img id="about1"
            src="images/about1.png" alt="Ygame artwork1">
-<br>
 <img id="about2"
            src="images/about2.jpg" alt="Ygame artwork2">
-<br>
 <img id="about3"
            src="images/about3.png" alt="Ygame artwork3">
+    
 </div>
-<div id="main">
-	<h1>About YGame</h1>
+<div id="main" class="middle">
+	 <div id="size">
+         <button id="minus" type="button">-</button>  
+         <button id="plus" type="button">+</button> 
+        </div>
+    <br> 
+    <h1>About YGame</h1>
+       
 	<p>YGame was started by one person. Alone, with nothing to do, this person began to make images, code, and bang his head against his desk when things didn't always work. Then came another person who helped make it better.</p>
     <h2 id="mission">YGame's Mission</h2>
     <p>	To explore strange new computer generated worlds. To seek out new games and new programming challenges. To boldly go where no small game company has gone before.
@@ -126,10 +157,15 @@
 <p>To left you can examine some of the fine graphic work done at YGame. From simple dishes, to depictions of cyberspace and far eastern jewelry, YGame does it all!</p>
 <h2>YGame's Games</h2>
 <p>Some of our games include:</p>
-<ul>
-    <li>Dictator: World Conquest</li>
-    <li>To The Stars!</li>
-</ul>
+
+<h3 class="faq">Dictator: World Conquest</h3> <p class="ans">Dictator is a game of world domination! Build up your forces.
+                Gather resources. Fight your enemies! 
+                In the end there shall be only ONE dictator.</p>
+    
+    <h3 class="faq">To The Stars!</h3>
+    <p class="ans">To the stars is a space exploration and trading game with explorable planets. 
+        Build a trade empire. 
+        Fight pirates and mercenaries in FPS style combat. Conquer the galaxy!</p>
 </div>
 		<footer>
  <p>
