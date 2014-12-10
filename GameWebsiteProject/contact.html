@@ -51,7 +51,7 @@ and open the template in the editor.
                 });
             });
             
-            $(document).ready(function() {
+         /*   $(document).ready(function() {
                 $('#register form').hide();
   $('#login').toggle(
       function() {
@@ -64,7 +64,22 @@ and open the template in the editor.
 	     $(this).removeClass('close');
       }
   ); // end toggle
-}); 
+}); */
+      $(document).ready(function() {
+        $('#register form').hide();
+        var isExpanded = true;
+
+    $("#login").bind("click", function(){
+        if(isExpanded) {   
+            $("#register form").slideUp();
+            isExpanded = false;
+        }
+        else {
+            $("#register form").slideDown();
+            isExpanded = true;
+        }    
+    });
+    });
          </script>
   </head>
   <body>

@@ -18,6 +18,21 @@ Once all three questions are answered the user is given an answer to their quest
         <script src="js/jquery.tooltipster.js"></script>
         <script>
            
+             $(document).ready(function() {
+        $('#register form').hide();
+        var isExpanded = true;
+
+    $("#login").bind("click", function(){
+        if(isExpanded) {   
+            $("#register form").slideUp();
+            isExpanded = false;
+        }
+        else {
+            $("#register form").slideDown();
+            isExpanded = true;
+        }    
+    });
+    });
             $(document).ready(function() { 
                 $('.tooltip').tooltipster();
                 $('.tooltip').tooltipster({

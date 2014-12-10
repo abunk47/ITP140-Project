@@ -18,7 +18,7 @@
                 });
             });
             
-            $(document).ready(function() {
+   /*         $(document).ready(function() {
                 $('#register form').hide();
   $('#login').toggle(
       function() {
@@ -31,7 +31,24 @@
 	     $(this).removeClass('close');
       }
   ); // end toggle
-});             
+});  
+*/
+  $(document).ready(function() {
+        $('#register form').hide();
+        var isExpanded = true;
+
+    $("#login").bind("click", function(){
+        if(isExpanded) {   
+            $("#register form").slideUp();
+            isExpanded = false;
+        }
+        else {
+            $("#register form").slideDown();
+            isExpanded = true;
+        }    
+    });
+    });
+    
   $(document).ready(function() {
       $('#gallery img').each(function(i) {
 	var imgFile = $(this).attr('src');
