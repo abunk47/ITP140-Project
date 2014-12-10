@@ -42,12 +42,14 @@
         $("#custstate").autocomplete({source: states});
         $("#custstate2").autocomplete({source: states});
         
-       // jQuery.validator.addMethod("stateUS", function(value) { var states = [,"AK","AZ","AR","CA","CO","CT","DE","DC","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","MD","MA","MI","MN","MS","MO","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY" ] var in_array = $.inArray(value.toUpperCase(), states); if (in_array == -1) { return false; }else{ return true; } }, "Please enter a valid US state");
-        /* added a regex to test for valid zip codes
+       jQuery.validator.addMethod("stateUS", function(value) 
+                { var states = [,"AK","AZ","AR","CA","CO","CT","DE","DC","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","MD","MA","MI","MN","MS","MO","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY" ] 
+                var in_array = $.inArray(value.toUpperCase(), states); if (in_array == -1) { return false; }else{ return true; } }, "Please enter a valid US state");
+        
        jQuery.validator.addMethod("zipRegex", function(value, element) {
                 return /^\d{5}(?:[-\s]\d{4})?$/.test( element.value );
                 }, "Please enter a valid US Zip Code!");
-                */
+                
         
         $('#order').validate({ 
             rules: {
@@ -72,13 +74,14 @@
                     rangelength:[1,20]}, 
                 custzip: {
                     required: true,
-                    zipcodeUS: true
+                    zipRegex: true
                    },
                 custzip2: {
                     required: true,
                     zipcodeUS: true
                 },
                 custstate: {
+
                     required: true,
                     maxlength: [2]
                 },
