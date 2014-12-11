@@ -48,6 +48,16 @@
     });
     });
     
+   
+
+$(document).change(function() {
+    if ($('#shipyes').is(':unchecked')) {
+        $('#shipit :input').attr('disabled', true);
+    } else {
+        $('#shipit :input').removeAttr('disabled');
+    }   
+});
+ 
     $(document).ready(function() {
         
         var states = ["AK", "AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA",
@@ -276,8 +286,9 @@
 		<p> <input type="text" id="custcard" name="custcard" class="custcard" value="" placeholder=" " > </p>
                 <label for="custcard"> Confirm Credit Card Number: </label>
 		<p> <input type="text" id="cardconfirm" name="cardconfirm" class="cardconfirm" value="" placeholder=" " > </p>
+                 <input type="checkbox" id="shipyes" name="DifferentShippingAddress []" value="difship"><label for="difship"> Check For Different Shipping Address</label>
         </fieldset>
-      <fieldset>
+      <fieldset class="shipit" id="shipit">
 		<legend> Shipping: </legend>
 		<p></p>
 		<label for="custname"> Name: </label>
