@@ -99,12 +99,17 @@ Once all three questions are answered the user is given an answer to their quest
                         alert("You have no clue what you want do you?");
                         load();
                     }
-                    else if (($.inArray("strategy", itemList, [0])) != -1 && ($.inArray("shooter", itemList, [0])) != -1 && itemList.length >= 2) {
+                    else if (($.inArray("strategy", itemList, [0])) != -1 && ($.inArray("shooter", itemList, [0])) != -1 && itemList.length == 2) {
                         alert("I think the 'Dictator: World Conquest!' is probably the best choice for you.");
                     }
-                    else if (itemlist.length == 3) {
-                        alert("I think based on your likes you should go with 'Dictator: World Conquest' the game has a mix of strategy, shooting, and action \n\
-                        and should provide tones of replayability!");
+                    else if (($.inArray("shooter", itemList, [0])) != -1 && ($.inArray("adventure", itemList, [0])) != -1 && itemList.length == 2) {
+                        alert("I think the 'Horrors at Six Flags: Zombie Nightmare!' is probably the best choice for you.");
+                    }
+                    else if (($.inArray("platformer", itemList, [0])) != -1 && ($.inArray("adventure", itemList, [0])) != -1 && itemList.length == 2) {
+                        alert("I think the 'Mario: Revenge of the Toads!' is probably the best choice for you.");
+                    }
+                    else if (itemList.length == 3) {
+                        alert("I think based on your likes you should go with 'Dictator: World Conquest' the game has a mix of strategy, shooting, and action and should provide tones of replayability!");
                     }
                 });
                 
